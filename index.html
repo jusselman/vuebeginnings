@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="author" content="">
+    <title>Vuedemy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <!-- <script src="js/vue.js"></script> -->
+    <!-- <script src="app.js"></script> -->
+  </head>
+      <body>
+
+
+        <h1>Getting Started with Vue.js</h1>
+        <p>Below is the button with 'Show Alert' will trigger an alert window.<br>
+          This is done by attaching the 'v-on:click' interpolation to the button.<br>
+          after the onclick listener, we assign the function 'alertWarning' which<br>
+          is defined in Javascript. <br>
+          JS - <br>
+          new Vue ({<br>
+              el: '#exercise',<br>
+              data: {<br>
+                value: ''<br>
+
+          },<br>
+              methods: {<br>
+                alertWarning: function() {<br>
+                  alert('You have been warned');<br>
+                }<br>
+              }<br>
+          });</p>
+
+
+        <div id="exercise">
+
+            <div>
+                <button v-on:click="alertWarning">Show Alert</button>
+            </div>
+
+            <hr>
+
+            <p>Next we have an input field which will dispaly whatever we type once the <br>
+              key is released, AKA keyup, defined as 'v-on:keyup="value = $event.target.value"'<br>
+              and will defifned what's placed in the value of the moustache brackets to the right'< p > {{ value }} < p >' and also below the input fields.<br>
+              JS - None required for this action.
+
+            </p>
+
+            <div>
+                <input type="text" v-on:keyup="value = $event.target.value">
+                <p>{{ value }}</p>
+            </div>
+
+            <p>The next input is basically the same, except with this one, the text will not be displayed<br>
+              until the enter key is hit. instead of 'v-on:keyup="value = $event.target.value"', we use<br>
+              'v-on:keyup.enter="value = $event.target.value"></p>
+
+            <div>
+                <input type="text" v-on:keyup.enter="value = $event.target.value">
+                <p>{{ value }}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <p>Next we have defined a function 'increase()' to be invoked on clicking, and have set the <br>
+          parameters to (2). Thus clicking will increase by increments of two</p>
+        <div id="app">
+          <button v-on:click="increase(2)">Click Me</button>
+
+          <hr>
+
+          <p>Next, below is a counter which will present us with the x and y axis values when moving mouse <br>
+            over the area of the element, except the 'dead-zone' where the rule is not applicable due tothe <br>
+            'span v-on:mousemove.stop="">Dead Spot'
+            JS - new Vue({<br>
+                    el: '#app',<br>
+                    data: {<br>
+                        counter: 0,<br>
+                        x: 0,<br>
+                        y: 0<br>
+                    },<br>
+
+                    methods: {<br>
+                      increase: function(step) {<br>
+                        this.counter += step;<br>
+                      },<br>
+                      updateCordinates: function(event) {<br>
+                        this.x = event.clientX;<br>
+                        this.y = event.clientY;<br>
+                      },<br>
+                      alertMe: function() {<br>
+                        alert('Alert!')<br>
+                      }<br>
+
+
+                    }<br>
+                });<br>
+
+          <p>{{ counter }}</p>
+          <p v-on:mousemove="updateCordinates">Coordinates: {{ x }} / {{ y }}
+          - <span v-on:mousemove.stop="">Dead Spot</span>
+          </p>
+          <hr>
+          <p>Finally, we have another input field which will display an alert once the enter or space key are released.<br>
+            JS-   alertMe: function() {
+                alert('Alert!')
+              } </p>
+          <input type="text" v-on:keyup.enter.space="alertMe">
+        </div>
+
+
+
+
+
+
+
+
+
+
+      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+       <script src="js/main.js"></script>
+      </body>
+  </html>
