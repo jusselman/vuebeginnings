@@ -1,50 +1,79 @@
+// new Vue({
+//   el: '#app',
+//   data: {
+//     attachRed: false,
+//     attachGreen: false,
+//     attachBlue: false
+//   }
+// });
+
+new Vue({
+  el: '#app2',
+  data: {
+    attachRed: false,
+    attachGreen: false,
+    attachBlue: false
+  },
+  computed: {
+    divClasses: function () {
+      return {
+        red: !this.attachRed,
+      }
+    },
+    divClasses1: function () {
+      return {
+        green: !this.attachGreen,
+      }
+    },
+    divClasses2: function () {
+      return {
+        blue: !this.attachBlue,
+      }
+    }
+
+  }
+});
+
 
 
 new Vue({
-        el: '#exercise',
-        data: {
-            value: 0
-        },
-        computed: {
-          result: function() {
-            return this.value < 37 ? 'Not enough' : '37 or more';
-          }
-        },
-        watch: {
-          result: function(value) {
-            var reset = this;
-            setTimeout(function() {
-              reset.value = 0;
-          }, 5000);
-        }
-      },
-    });
+  el: '#app3',
+  data: {attachRed: false, color: 'green'},
+  computed: {
+    divClasses: function () {
+      return {
+        red: this.attachRed,
+        // blue: !this.attachRed
+      }
+    }
+  }
+});
 
-
-// new Vue ({
-//     el: '#app',
-//     data: {
-//       counter: 0,
-//       secondCounter: 0
-//           },
-//       computed: {
-//         output: function() {
-//           console.log('Computed');
-//           return this.counter > 5 ? 'Greater 5' : 'Smaller than 5';
-//         }
-//       },
-//       watch: {
-//         counter: function(value) {
-//           setTimeOut(function())
-//         }
-//       },
-//     methods: {
-//       result: function() {
-//         console.log('Method');
-//         return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
-//         // return this.secondCounter > 5 ? 'Greater than 5' : 'Smaller than 5'
-//       }
-//     }
-//
-//
-//   });
+new Vue({
+  el: '#app4',
+  data: {
+    attachRed: false,
+    attachGreen: false,
+    attachBlue: false,
+    attachYellow: false
+  },
+  // computed: {
+  //   divClasses: function () {
+  //     return {
+  //       red: this.attachRed,
+  //       // green: this.attachGreen
+  //     }
+  //   },
+  //   // divClasses1: function () {
+  //   //   return {
+  //   //     green: !this.attachGreen,
+  //   //   }
+  //   // },
+  //   // divClasses2: function () {
+  //   //   return {
+  //   //     blue: !this.attachBlue,
+  //   //   }
+  //   // }
+  //
+  // }
+});
