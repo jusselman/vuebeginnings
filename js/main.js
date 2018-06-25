@@ -1,79 +1,29 @@
-// new Vue({
-//   el: '#app',
-//   data: {
-//     attachRed: false,
-//     attachGreen: false,
-//     attachBlue: false
-//   }
-// });
-
 new Vue({
-  el: '#app2',
+	el: "#app",
   data: {
-    attachRed: false,
-    attachGreen: false,
-    attachBlue: false
+  counter: 0,
+  x:0,
+  y:0
   },
-  computed: {
-    divClasses: function () {
-      return {
-        red: !this.attachRed,
-      }
+  methods: {
+  increase: function(step, event){
+  	this.counter += step;
     },
-    divClasses1: function () {
-      return {
-        green: !this.attachGreen,
-      }
-    },
-    divClasses2: function () {
-      return {
-        blue: !this.attachBlue,
-      }
-    }
+   updateCoordinates: function(event) {
+   this.x = clientX;
+   this.y = clientY;
+   }
 
   }
 });
 
-
-
 new Vue({
-  el: '#app3',
-  data: {attachRed: false, color: 'green'},
-  computed: {
-    divClasses: function () {
-      return {
-        red: this.attachRed,
-        // blue: !this.attachRed
-      }
+	el: "#exercise",
+  data:{
+  value:''},
+  methods: {
+  	showAlert: function() {
+    	alert("ALERT!");
     }
   }
-});
-
-new Vue({
-  el: '#app4',
-  data: {
-    attachRed: false,
-    attachGreen: false,
-    attachBlue: false,
-    attachYellow: false
-  },
-  // computed: {
-  //   divClasses: function () {
-  //     return {
-  //       red: this.attachRed,
-  //       // green: this.attachGreen
-  //     }
-  //   },
-  //   // divClasses1: function () {
-  //   //   return {
-  //   //     green: !this.attachGreen,
-  //   //   }
-  //   // },
-  //   // divClasses2: function () {
-  //   //   return {
-  //   //     blue: !this.attachBlue,
-  //   //   }
-  //   // }
-  //
-  // }
-});
+})
