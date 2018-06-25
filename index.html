@@ -5,38 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="author" content="">
-    <title>BindingClassTwo</title>
+    <title>Sliders</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <!-- <script src="https://npmcdn.com/vue/dist/vue.js"></script> -->
     <!-- <script src="js/vue.js"></script> -->
     <!-- <script src="app.js"></script> -->
   </head>
       <body>
 
-        <div id="app">
-  <button type="button" @click="increase(2, $event)">
-  INCREASE MUTHERFUCKA
-  </button>
-  <p>
-  {{ counter }}
-  </p>
+      <div class="panels">
+        <div class="panel panel1">
+          <p>Here's</p>
+          <p>Some</p>
+          <p>Beach</p>
+        </div>
+        <div class="panel panel2">
+          <p>Cold</p>
+          <p>As a</p>
+          <p>Motherfucker</p>
+        </div>
+        <div class="panel panel3">
+          <p>Monkeys</p>
+          <p>Live</p>
+          <p>Here</p>
+        </div>
+        <div class="panel panel4">
+          <p>Forests</p>
+          <p>Have</p>
+          <p>Mushrooms</p>
+        </div>
+      </div>
 
- <p v-on:mousemove="updateCoordinates">
-    Coordinates: {{x}} / {{y}}
 
-  </p>
-</div>
 
-<div id="exercise">
-
-<button @click="showAlert">Alert</button>
-<input type="text" v-on:keydown.enter=" value = $event.target.value">
-<p>
-  {{ value }}
-</p>
-
-</div>
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="js/main.js"></script>

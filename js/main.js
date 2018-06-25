@@ -1,29 +1,14 @@
-new Vue({
-	el: "#app",
-  data: {
-  counter: 0,
-  x:0,
-  y:0
-  },
-  methods: {
-  increase: function(step, event){
-  	this.counter += step;
-    },
-   updateCoordinates: function(event) {
-   this.x = clientX;
-   this.y = clientY;
-   }
+const panels = document.querySelectorAll('.panel');
 
-  }
-});
+	function toggleOpen() {
+		this.classList.toggle('open');
+	}
 
-new Vue({
-	el: "#exercise",
-  data:{
-  value:''},
-  methods: {
-  	showAlert: function() {
-    	alert("ALERT!");
-    }
-  }
-})
+function toggleActive(e) {
+		if(e.propertyName.includes('flex')) {
+		this.classList.toggle('open-active')
+}
+}
+
+	panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+	panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
